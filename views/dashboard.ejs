@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+            flex-wrap: wrap;
+            background-size: cover;
+            backdrop-filter: blur(0.5rem);
+        }
+        .big-box{
+            display: flex;
+              height: 50vh;
+              width: 60vw;
+              box-shadow: rgba(5, 5, 5, 0.15) 0px 5px 15px 0px;
+              border-radius: 5%;
+              gap: 5px;
+        }
+        .image-box {
+    position: relative;
+    height: 50vh;
+    width: 40vw;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 10%;
+}
+
+.image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+    z-index: -1;
+}
+
+.degree {
+    position: absolute;
+    font-weight: 500;
+    top: 45%;
+    /* left: 30%; */
+    color: white;
+    font-size: 4vw;
+    padding: 10px;
+    z-index: 1;
+   
+}
+.city-name{
+    position: absolute;
+    top: 65%;
+    /* left: 40%; */
+    color: whitesmoke;
+}
+.middle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+        /* search-box */
+
+       
+        .search-box{
+            width: 35%;
+            border-radius: 5%;
+            border: 1px solid transparent;
+            backdrop-filter: blur(1rem);
+           
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            justify-content: space-evenly;
+           
+           color:white;
+            font-weight: 400;
+            font-size: large;
+           
+        }  
+        input{
+           background: transparent;
+           border: 0;
+           border-bottom: 2px solid black;
+            border-radius: 5%;
+            /* border-bottom: 2px solid black; */
+            text-align: center;
+            outline: 0;
+            font-weight: 600;
+            font-size: 2vh;
+        }
+        span{
+            background: transparent;
+           border: 0;
+        }
+       
+        .sub-details{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .drizzle{
+            background-image: url("https://images.unsplash.com/photo-1595174028948-42a4b1786664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+            background-size: cover;
+            border-radius: inherit;  
+        }
+        .rain{
+           
+            background-image: url("https://images.unsplash.com/photo-1595174028948-42a4b1786664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+            background-size: cover;
+            border-radius: inherit;  
+       
+        }
+        .clouds{
+            background-image: url("https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
+            background-size: cover;
+            border-radius: inherit;
+        }
+        .windy{
+            background-image: url("https://images.unsplash.com/photo-1505672678657-cc7037095e60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+            background-size: cover;
+            border-radius: inherit;
+        }
+        .mist{
+            background-image: url("https://images.unsplash.com/photo-1482841628122-9080d44bb807?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80");
+            background-size: cover;
+            border-radius: inherit;
+        }
+      h1{
+        color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+        font-weight:800;
+      }
+      button{
+        background:none;
+        width:40px;
+        border:2px solid gainsboro;
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/1a59698ce9.js" crossorigin="anonymous"></script>
+</head>
+<body class="<%=weatherCondition%>" >
+    <div class="big-box <%=weatherCondition%>">
+        <div class="image-box <%=weatherCondition%>">
+           <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="" srcset="">
+         <div class="middle">
+            <p  class="degree"><%= temp %> <i class="<%= iconClass %>"></i></p>
+            <p class="city-name"><%= city %></p>
+        </div>
+
+        </div>
+        <div class="search-box">
+            <h1>Weather App</h1>
+              <div class="search-bar">
+                <form action="/dashboard" method="post">
+                     <input type="text" placeholder="Enter City" name="city" id="city">
+                    <button id="submit"><span><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></span></button>
+                </form>
+            </div>
+            <p> <%= Details %></p>
+           
+           
+           
+        </div>
+     
+    </div>
+    <script>
+       
+
+    </script>
+</body>
+</html>
